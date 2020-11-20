@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1605879777 source:e:\iot track iti\c\programs\lab7\full_form_all\main.c
+	"Form.h"
+
+1605398343 e:\iot track iti\c\programs\lab7\full_form_all\form.h
+
+1605879804 source:e:\iot track iti\c\programs\lab7\full_form_all\form.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"Position_Color.h"
+	"MultiLine_editor.h"
+	"Form_config.h"
+
+1605255192 e:\iot track iti\c\programs\lab7\full_form_all\position_color.h
+
+1605721299 e:\iot track iti\c\programs\lab7\full_form_all\multiline_editor.h
+
+1605850500 e:\iot track iti\c\programs\lab7\full_form_all\form_config.h
+
+1605878991 source:e:\iot track iti\c\programs\lab7\full_form_all\multiline_editor.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"Position_Color.h"
+
+1605255104 source:e:\iot track iti\c\programs\lab7\full_form_all\position_textcolor.c
+	<windows.h>
+
