@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1605879777 source:e:\iot track iti\c\programs\lab7\full_form_all\main.c
+1605880496 source:e:\iot track iti\c\programs\lab7\full_form_all\main.c
 	"Form.h"
 
 1605398343 e:\iot track iti\c\programs\lab7\full_form_all\form.h
@@ -18,7 +18,7 @@
 
 1605850500 e:\iot track iti\c\programs\lab7\full_form_all\form_config.h
 
-1605878991 source:e:\iot track iti\c\programs\lab7\full_form_all\multiline_editor.c
+1605946038 source:e:\iot track iti\c\programs\lab7\full_form_all\multiline_editor.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>

@@ -390,6 +390,45 @@ void Multi_Line_editor(int LINE_SIZE_HER, int LINE_SIZE_VER, int Xpos, int Ypos,
 
                             shift_counter--;
                         }
+                        /* shift the remind of th current line to the next line. */
+                        if(End_of_Line[line_number - 1] != End_position[line_number - 1])
+                        {
+                            while(Current_Position[line_number - 1] != End_of_Line[line_number - 1])
+                            {
+                                *Current_Position[line_number] = *Current_Position[line_number - 1];
+                                *Current_Position[line_number - 1] = ' ';
+                                Current_Position[line_number]++;
+                                Current_Position[line_number - 1]++;
+                            }
+                            /* update the end of current line. */
+                            End_of_Line[line_number - 1] -= Current_Position[line_number] - Start_position[line_number];
+                            Current_Position[line_number - 1] = End_of_Line[line_number - 1];
+                        }
+                        else if(End_of_Line[line_number - 1] == End_position[line_number - 1] && Current_Position[line_number - 1] != End_of_Line[line_number - 1])
+                        {
+                            while(Current_Position[line_number - 1] <= End_of_Line[line_number - 1])
+                            {
+                                *Current_Position[line_number] = *Current_Position[line_number - 1];
+                                *Current_Position[line_number - 1] = ' ';
+                                Current_Position[line_number]++;
+                                Current_Position[line_number - 1]++;
+                            }
+                            /* update the end of current line. */
+                            End_of_Line[line_number - 1] -= Current_Position[line_number] - Start_position[line_number] - 1;
+                            Current_Position[line_number - 1] = End_of_Line[line_number - 1];
+                        }
+                        /* update the end of next line. */
+                        for(int j = 0; j < LINE_SIZE_VER - 1; j++)
+                        {
+                            if(Line_arr[line_number][j] != ' ')
+                            {
+                                if(&Line_arr[line_number][j] != End_position[line_number])
+                                    End_of_Line[line_number] = &Line_arr[line_number][j] + 1;
+                                else
+                                    End_of_Line[line_number] = &Line_arr[line_number][j];
+                            }
+                        }
+                        Current_Position[line_number] = Start_position[line_number];
                         /* print all lines again. */
                         for(int i = 0; i < LINE_SIZE_HER; i++)
                         {
