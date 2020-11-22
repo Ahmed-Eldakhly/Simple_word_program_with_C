@@ -347,6 +347,49 @@ void Multi_Line_editor(int LINE_SIZE_HER, int LINE_SIZE_VER, int Xpos, int Ypos,
                         }
 
                     }
+                    /* if the line is empty and the user press backspace. */
+                    else if (End_of_Line[line_number] == Line_arr[line_number])
+                    {
+                        shift_counter = line_number;
+                        while(shift_counter != Last_Line)
+                        {
+                             /* shitt the content of the lines. */
+                            shift_Line_arr = Line_arr[shift_counter];
+                            Line_arr[shift_counter] = Line_arr[shift_counter + 1];
+                            Line_arr[shift_counter + 1] = shift_Line_arr;
+                            /* shift the end of the lines. */
+                            shift_End_of_Line = End_of_Line[shift_counter];
+                            End_of_Line[shift_counter] = End_of_Line[shift_counter + 1];
+                            End_of_Line[shift_counter + 1] = shift_End_of_Line;
+                            /* shift the current position of the lines. */
+                            shift_Current_Position = Current_Position[shift_counter];
+                            Current_Position[shift_counter] = Current_Position[shift_counter + 1];
+                            Current_Position[shift_counter + 1] = shift_Current_Position;
+                            /* shift the start of the lines. */
+                            shift_Start_position = Start_position[shift_counter];
+                            Start_position[shift_counter] = Start_position[shift_counter + 1];
+                            Start_position[shift_counter + 1] = shift_Start_position;
+                            /* shift the end of the lines. */
+                            shift_End_position = End_position[shift_counter];
+                            End_position[shift_counter] = End_position[shift_counter + 1];
+                            End_position[shift_counter + 1] = shift_End_position;
+                            /* shift the terminator of the lines. */
+                            shift_Terminator_position = Terminator_position[shift_counter];
+                            Terminator_position[shift_counter] = Terminator_position[shift_counter + 1];
+                            Terminator_position[shift_counter + 1] = shift_Terminator_position;
+
+                            shift_counter++;
+                        }
+                        /* print all lines again. */
+                        for(int i = 0; i < LINE_SIZE_HER; i++)
+                        {
+                            textattr(color_g);
+                            gotoxy(Xpos , Ypos + i);
+                            _cprintf("%s", Line_arr[i]);
+                        }
+                        Last_Line--;
+                        line_number--;
+                    }
                     break;
                 /* Escape button to end the program. */
                 case 9:

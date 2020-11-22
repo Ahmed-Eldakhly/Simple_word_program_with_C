@@ -351,9 +351,7 @@ void Form_Page(void)
                                 /* get the last line number in the saved file. */
                                 for(int i = 0; i < LINE_SIZE_HER; i++)
                                 {
-                                    x[0] = '\0';
-                                    fscanf(fptr,"%s",x);
-                                    if(strlen(x) != 0 && i < LINE_SIZE_HER - 1)
+                                    if(End_of_Line[i] != Line_arr[i])
                                         Last_Line = i;
                                 }
                             }
