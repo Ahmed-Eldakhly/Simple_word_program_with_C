@@ -51,7 +51,7 @@ void frame(void)
     textattr(0x07);
     gotoxy(0,0);
     printf(" _______________________________________________________________________________\n");
-    printf("|New            |Save           |Display        |Color          |Exit           |\n");
+    printf("|New            |Save           |Load file      |Color          |Exit           |\n");
     printf("|_______________|_______________|_______________|_______________|_______________|\n");
     for(int i = 3; i < 40; i++)
     {
@@ -67,7 +67,7 @@ void frame_menu(void)
 {
     textattr(0x07);
     gotoxy(0,1);
-    printf("|New            |Save           |Display        |Color          |Exit           |\n");
+    printf("|New            |Save           |Load file      |Color          |Exit           |\n");
 
 }
 /****************************************************************
@@ -209,7 +209,7 @@ void Multi_Line_editor(int LINE_SIZE_HER, int LINE_SIZE_VER, int Xpos, int Ypos,
             /* enable the cursor. */
             printf("\e[?25h");
             /* get the user pressed key. */
-            Inserted_Char = getch();
+            Inserted_Char = _getch();
             /* disable the cursor. */
             printf("\e[?25l");
         }
@@ -219,7 +219,7 @@ void Multi_Line_editor(int LINE_SIZE_HER, int LINE_SIZE_VER, int Xpos, int Ypos,
         /* If condition to Inserted_Character if the user inserted special Inserted_Chararacter or normal letter to display it. */
         if(Inserted_Char == -32)
         {
-            Inserted_Char = getch();
+            Inserted_Char = _getch();
             switch(Inserted_Char)
             {
                 /* Go to the start of the current Line */

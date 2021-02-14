@@ -27,3 +27,32 @@
 1605255104 source:e:\iot track iti\c\programs\lab7\full_form_all\position_textcolor.c
 	<windows.h>
 
+1613263672 source:e:\cs50\all problems\project\form.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"Position_Color.h"
+	"MultiLine_editor.h"
+	"Form_config.h"
+
+1613258897 e:\cs50\all problems\project\position_color.h
+
+1613258897 e:\cs50\all problems\project\multiline_editor.h
+
+1613261490 e:\cs50\all problems\project\form_config.h
+
+1613266515 source:e:\cs50\all problems\project\main.c
+	<windows.h>
+	"Form.h"
+
+1613261490 e:\cs50\all problems\project\form.h
+
+1613266661 source:e:\cs50\all problems\project\multiline_editor.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"Position_Color.h"
+
+1613258897 source:e:\cs50\all problems\project\position_textcolor.c
+	<windows.h>
+

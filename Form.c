@@ -106,11 +106,11 @@ static void color(void)
             }
             textattr(0x07);
         }
-        x = getch();
+        x = _getch();
         /* change the colors by arrows. */
         if(x == -32)
         {
-            x = getch();
+            x = _getch();
             switch(x)
             {
                 case 71:
@@ -203,7 +203,7 @@ void Form_Page(void)
                     _cprintf("Save");
                     break;
                 case 2:
-                    _cprintf("Display");
+                    _cprintf("Load file");
                     break;
                 case 3:
                     _cprintf("Color");
@@ -215,11 +215,11 @@ void Form_Page(void)
             textattr(0x07);
         }
         /* get user choice. */
-        ch = getch();
+        ch = _getch();
         /* if the user press on arrows or tab or enter. */
         if(ch == -32)
         {
-            ch = getch();
+            ch = _getch();
             switch(ch)
             {
                 case 71:
@@ -290,7 +290,7 @@ void Form_Page(void)
                             }
                             /* close the file to complete saving of the data. */
                             fclose(fptr);
-                            getch();
+                            _getch();
                             gotoxy(20 , 20);
                             printf("                               ");
                             break;
